@@ -435,7 +435,7 @@ def view_lookup(request, uri):
         raise ValueError("URI has no route")
 
     resource_name = route.name.replace('-record', '')\
-                              .replace('-collection', '')
+                              .replace('-resource', '')
     return resource_name, matchdict
 
 

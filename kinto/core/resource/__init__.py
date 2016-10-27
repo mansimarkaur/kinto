@@ -111,7 +111,7 @@ def register_resource(resource_cls, settings=None, viewset=None, depth=1,
             raise pyramid_exceptions.ConfigurationError(msg)
 
         # A service for the list.
-        service = register_service('collection', config.registry.settings)
+        service = register_service('resource', config.registry.settings)
         config.add_cornice_service(service)
         # An optional one for record endpoint.
         if getattr(viewset, 'record_path') is not None:

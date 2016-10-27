@@ -10,14 +10,14 @@ from kinto.core.testing import unittest
 
 class FakeViewSet(ViewSet):
     """Fake viewset class used for tests."""
-    collection_path = "/{resource_name}"
+    resource_path = "/{resource_name}"
     record_path = "/{resource_name}/{{id}}"
 
-    collection_methods = ('GET',)
+    resource_methods = ('GET',)
     record_methods = ('PUT',)
 
     def __init__(self):
-        self.collection_arguments = self.arguments
+        self.resource_arguments = self.arguments
         self.record_arguments = self.arguments
         self.update = mock.MagicMock()
 

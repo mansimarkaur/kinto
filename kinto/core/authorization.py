@@ -138,7 +138,7 @@ class RouteFactory(object):
                           hasattr(service, 'resource'))
         if is_on_resource:
             self.resource_name = request.current_resource_name
-            self.on_collection = getattr(service, "type", None) == "collection"
+            self.on_collection = getattr(service, "type", None) == "resource"
 
             self.permission_object_id, self.required_permission = (
                 self._find_required_permission(request, service))
